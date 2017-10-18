@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="js/swiper.css"/>
+		<script src="js/angular-1.4.6.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/angular-ui-router.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		*{
+			padding:0 ;
+			margin: 0;
+			list-style: none;
+		}
+		footer ul{
+			height: 80px;
+			width: 100%;
+			background: white;
+			position: fixed;
+			bottom: 0;
+			display: flex;
+			justify-content: space-around;
+			text-align: center;
+		}
+		footer ul li{
+			width: 25%;
+		}
+		li img{
+			height: 50px;
+			width: 50px;
+		}
+		li span{
+			display: block;
+		}
+	</style>
+	
+	
+	</head>
+	<body ng-app="app" ng-controller="aaa">
+		<footer>
+			<ul>
+				<li>
+					<a ui-sref="/tao"><img src="img/1_27.png"/></a>
+				</li>
+			
+				<li>
+					<a ui-sref="/wt"><img src="img/1_27.png"/><span>微淘</span></a>
+				</li>
+			<li>
+					<a ui-sref="/xx"><img src="img/1_27.png"/><span>消息</span></a>
+				</li>
+				<li>
+					<a ui-sref="/gw"><img src="img/1_27.png"/><span>购物车</span></a>
+				</li>
+				<li>
+					<a ui-sref="/wd"><img src="img/1_27.png"/><span>我的淘宝</span></a>
+				</li>
+				</ul>
+		</footer>
+		<div ui-view=""></div>
+	</body>
+	<script type="text/javascript">
+		var app=angular.module("app",["ui.router"])
+		app.config(function($stateProvider,$urlRouterProvider){
+			$stateProvider.state("/tao",{
+				url:"/tao",
+				template:"1111"
+			}).state("/wt",{
+				url:"/wt",
+				template:"222"
+			}).state("/xx",{
+				url:"/xx",
+				template:"3333"
+			}).state("/gw",{
+				url:"/gw",
+				template:"44444"
+			}).state("/wd",{
+				url:"/wd",
+				template:"555"
+			})
+		})
+		app.controller("aaa",function($scope,$http){
+			
+		})
+	</script>
+</html>
